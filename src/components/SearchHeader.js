@@ -9,7 +9,7 @@ import { FaWineGlassAlt } from 'react-icons/fa'
 
 const SearchHeader = ({ onDelete, onSearch, searchText, wines, onLoad}) => {
     return (
-        <div class="pb-5 border-b border-gray-200">
+        <div class="pb-5 border-b py-10">
             <div class="-ml-2 -mt-2 flex justify-center flex-wrap items-baseline">
                 <h3 class="ml-2 mt-2 text-lg leading-6 font-medium text-gray-900">
                 Wine Search

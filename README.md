@@ -19,5 +19,6 @@ npm run start
 
 ## Future improvements
 * Improve CSS to more closely match the design spec
+* Fix show more
+* Fix "x" icon in search bar to be clickable and run the onDelete function
 * Optimise calling of search API when deleting characters from search term
-* Add a shared axios instance plugin

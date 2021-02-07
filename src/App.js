@@ -55,17 +55,21 @@ function App() {
 
   if (displayHidden) {
     return (
-      <div class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 bg-gray-500">
-        <div class="max-w-3xl mx-auto bg-gray-100">
-          <SearchHeader onLoad={loadWine} onDelete={deleteText} onSearch={searchWines} wines={wines} searchText={searchText}/>
+      <div class="body">
+        <div class="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto">
+            <SearchHeader onLoad={loadWine} onDelete={deleteText} onSearch={searchWines} wines={wines} searchText={searchText}/>
+          </div>
         </div>
       </div>
     );
   }
   return (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto">
-        <DisplayHeader wine={wine} calculatedBreakdown={calculatedBreakdown} onBack={setDisplayHidden} onClick={loadWine}/>
+    <div class="body">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <DisplayHeader wine={wine} calculatedBreakdown={calculatedBreakdown} onBack={setDisplayHidden} onClick={loadWine}/>
+        </div>
       </div>
     </div>
   );
