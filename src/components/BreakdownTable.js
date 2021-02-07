@@ -1,8 +1,10 @@
 import BreakdownComponent from './BreakdownComponent'
 
+/**
+ * This component is a table and dynamically fills each row with BreakdownComponent components 
+ */
 const BreakdownTable = ({ calculatedBreakdown }) => {
-    console.log(calculatedBreakdown.breakdown)
-    const breakdownType = calculatedBreakdown.breakdownType.join("-")
+    const breakdownType = calculatedBreakdown.breakdownType.join("-") // turns field list into string
     return (
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

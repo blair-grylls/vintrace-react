@@ -5,6 +5,11 @@ import BreakdownTable from './BreakdownTable'
 import BreakdownCard from './BreakdownCard'
 import FieldsButtons from './FieldsButtons'
 
+/**
+ * This component is seen when the user has clicked on a particular wine. It displays the basic details as well as the complete breakdown of the wine.
+ * Can click back to the previous page and click on the edit icon.
+ */
+
 const DisplayHeader = ({ onClick, calculatedBreakdown, wine ,onBack }) => {
     return (
         <div>

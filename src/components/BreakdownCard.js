@@ -1,4 +1,6 @@
-
+/**
+ * This component is a quick breakdown of the wine the user is looking at 
+ */
 const BreakdownCard = ({ wine }) => {
     //console.log({wine})
     return (

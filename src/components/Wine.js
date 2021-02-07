@@ -1,3 +1,6 @@
+/**
+ * Each wine component is looped through and displayed. Only necessary details are shown. Can be clicked on to expand.
+ */
 
 const Wine = ({ wine, onLoad }) => {
     var description = (wine.description) ? wine.description:"N/A"

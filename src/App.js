@@ -4,17 +4,22 @@ import SearchHeader from './components/SearchHeader'
 import DisplayHeader from './components/DisplayHeader'
 
 function App() {
-  const [wines, setWines] = useState([])
+  const [wines, setWines] = useState([]) // list of wine objects
 
-  const [wine, setWine] = useState([])
+  const [wine, setWine] = useState([]) // single wine object being displayed by displayHeader
 
-  const [calculatedBreakdown, setCalculatedBreakdown] = useState([])
+  const [calculatedBreakdown, setCalculatedBreakdown] = useState([]) // data for BreakdownTable
 
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState('') // input for searchWines function, filled by searchBar
 
-  const [displayHidden, setDisplayHidden] = useState(true)
+  const [displayHidden, setDisplayHidden] = useState(true) // toggles which header is visible
 
-  // Load wine
+  /**
+   * This function calls the api to calulate the percentage breakdown, switches from searchHeader to displayHeader 
+   * and updates the win and calclatedBreakdown props
+   * @param {*} fields string to determine grouping {year-variety-region}
+   * @param {*} lotCode unique identifier of the wine
+   */
   const loadWine = (fields,lotCode) => {
     console.log({fields}, {lotCode})
     axios.get(`http://localhost:1995/api/breakdown/${fields}/${lotCode}`)
@@ -25,7 +30,9 @@ function App() {
       })
   }
 
-  // Delete text
+  /**
+   * This function is called when the x in the search bar is clicked. It clears the search text and wine list.
+   */
   const deleteText = () => {
     console.log('deleting')
     setSearchText('')
@@ -33,7 +40,7 @@ function App() {
   }
 
   /**
-   * Takes in searchText and queries API for wines/breakdowns that have a matching lotCode or description. Returns list of wines and calls setWines
+   * Takes in searchText and queries API for wines/breakdowns that have a matching lotCode or description. Returns list of wines and calls setWines.
    * @param {*} searchText 
    */
   const searchWines = (searchText) => {

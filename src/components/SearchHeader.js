@@ -2,6 +2,11 @@ import SearchBar from './SearchBar'
 import Wines from './Wines'
 import { FaWineGlassAlt } from 'react-icons/fa'
 
+/**
+ * This page is seen when first using the application. It allows the user to search for a wine based on the lotCode or description for a partial match.
+ * Upon clicking on a wine the view will be switched to the HeaderDisplay and this will be hidden.
+ */
+
 const SearchHeader = ({ onDelete, onSearch, searchText, wines, onLoad}) => {
     return (
         <div class="pb-5 border-b border-gray-200">

@@ -1,5 +1,6 @@
-import React from 'react'
-
+/**
+ * This component is a percentage and unique grouping. It is looped by BreakdownTable.
+ */
 const BreakdownComponent = ({ breakdownComponent }) => {
     console.log({breakdownComponent})
     return (
