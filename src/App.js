@@ -8,6 +8,8 @@ function App() {
 
   const [wine, setWine] = useState([]) // single wine object being displayed by displayHeader
 
+  const [fields, setFields] = useState([true,false,false,false]) // single wine object being displayed by displayHeader
+
   const [calculatedBreakdown, setCalculatedBreakdown] = useState([]) // data for BreakdownTable
 
   const [searchText, setSearchText] = useState('') // input for searchWines function, filled by searchBar
@@ -20,13 +22,14 @@ function App() {
    * @param {*} fields string to determine grouping {year-variety-region}
    * @param {*} lotCode unique identifier of the wine
    */
-  const loadWine = (fields,lotCode) => {
+  const loadWine = (fieldsBool,fields,lotCode) => {
     console.log({fields}, {lotCode})
     axios.get(`http://localhost:1995/api/breakdown/${fields}/${lotCode}`)
             .then( res => {
                 setWine(wines.find((wine) => wine.lotCode === lotCode))
                 setCalculatedBreakdown(res.data.breakdownResult)
                 setDisplayHidden(false)
+                setFields(fieldsBool)
       })
   }
 
@@ -68,7 +71,7 @@ function App() {
     <div class="body">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
-          <DisplayHeader wine={wine} calculatedBreakdown={calculatedBreakdown} onBack={setDisplayHidden} onClick={loadWine}/>
+          <DisplayHeader fields={fields} wine={wine} calculatedBreakdown={calculatedBreakdown} onBack={setDisplayHidden} onClick={loadWine}/>
         </div>
       </div>
     </div>

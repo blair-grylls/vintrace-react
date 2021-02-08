@@ -10,7 +10,7 @@ import FieldsButtons from './FieldsButtons'
  * Can click back to the previous page and click on the edit icon.
  */
 
-const DisplayHeader = ({ onClick, calculatedBreakdown, wine ,onBack }) => {
+const DisplayHeader = ({ fields, onClick, calculatedBreakdown, wine ,onBack }) => {
     return (
         <div>
         <li>
@@ -43,15 +43,15 @@ const DisplayHeader = ({ onClick, calculatedBreakdown, wine ,onBack }) => {
             </div>
             <div>
             <FaEdit
-                            style={{ cursor: 'pointer' }} 
-                            onClick={() => alert("Clicked")}
-                        />
+                style={{ cursor: 'pointer' }} 
+                onClick={() => alert("Clicked")}
+            />
             </div>
         </div>
         </a>
         </li>
         <BreakdownCard wine={wine}/>
-        <FieldsButtons onClick={onClick} lotCode={wine.lotCode}/>
+        <FieldsButtons fields={fields} onClick={onClick} lotCode={wine.lotCode}/>
         <BreakdownTable calculatedBreakdown={calculatedBreakdown}/>
         </div>
         

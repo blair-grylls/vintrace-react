@@ -5,7 +5,7 @@
 const Wine = ({ wine, onLoad }) => {
     var description = (wine.description) ? wine.description:"N/A"
     return (
-        <div class="bg-white px-4 py-4 sm:px-6" onClick={() => onLoad("year",wine.lotCode)}>
+        <div class="bg-white px-4 py-4 sm:px-6" onClick={() => onLoad([true,false,false,false],"year",wine.lotCode)}>
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-indigo-600 truncate">
               {wine.lotCode}
